@@ -33,7 +33,8 @@ public class User extends BaseEntity{
         user.lastName = registrationDto.getLastName();
         user.login = registrationDto.getLogin();
         user.password = pswdHash;
-        user.address = address;
+        user.address = Address.apply(registrationDto);
+
         user.birthDate = LocalDate.parse(registrationDto.getBirthDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
         return user;

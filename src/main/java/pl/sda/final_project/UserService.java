@@ -14,7 +14,15 @@ public class UserService {
 
     public void registerUser(RegistrationDto registrationDto){
         String passwordHash = String.valueOf(registrationDto.getPassword().hashCode());
-        User userToSave = new User();
+        if (userWithEmailExists(registrationDto.getLogin())){
+            throw new RuntimeException("Użytkownik o emailu " + registrationDto.getLogin() + " istnieje");
+        }
+        User userToSave = User.apply(registrationDto, passwordHash);
+        userRepo.save(userToSave);
+    }
+
+    private boolean userWithEmailExists(String login) {
+        return userRepo.existsByLogin(login);
     }
 
 }
