@@ -28,7 +28,6 @@ public class User extends BaseEntity{
 
     public static User apply(RegistrationDto registrationDto, String pswdHash){
         User user = new User();
-        Address address = Address.apply(registrationDto);
         user.firstName = registrationDto.getFirstName();
         user.lastName = registrationDto.getLastName();
         user.login = registrationDto.getLogin();
@@ -41,15 +40,17 @@ public class User extends BaseEntity{
     }
 
     public void addRole(UserRole userRole) {
-        if (roles != null &&
-                roles.stream()
-                        .anyMatch(r -> userRole.getRoleName().equals(r.getRoleName()))) {
+        if (roleExists(userRole)) {
             return;
         }
-        if (roles == null){
+        if (roles == null) {
             roles = new ArrayList<>();
         }
         roles.add(userRole);
+    }
+
+    private boolean roleExists(UserRole userRole) {
+        return roles != null && roles.stream().anyMatch(r -> userRole.getRoleName().equals(r.getRoleName()));
     }
 
 

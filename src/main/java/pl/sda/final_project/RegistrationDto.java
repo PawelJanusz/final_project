@@ -1,11 +1,8 @@
 package pl.sda.final_project;
 
-import javax.persistence.Embedded;
-import javax.persistence.ManyToMany;
-import java.time.LocalDate;
-import java.util.List;
 
 public class RegistrationDto {
+
 
     private String country;
     private String city;
