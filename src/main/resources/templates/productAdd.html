@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Product add form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<h2 class="text-center">ADD PRODUCT</h2>
+
+<form action="/product/add" method="post" th:object="${productToSave}" >
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input class="form-control is-valid" type="text" th:field="*{productTitle}" placeholder="Nazwa produktu"><br>
+        </div>
+        <div class="form-group col-md-6">
+            <input class="form-control is-valid" type="text" th:field="*{productDescription}" placeholder="Opis produktu"><br>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" th:field="*{productImageUrl}" placeholder="Image URL"><br>
+        </div>
+        <div class="form-group col-md-6">
+            <select class="form-control" type="text" th:field="*{productType}" placeholder="Typ produktu"><br>
+                <option th:each="c : ${productTypes}" th:text="${c.plName}" th:value="${c.name()}"></option>
+            </select><br>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <select class="form-control" type="text" th:field="*{productCategoryId}" placeholder="Kategoria produktu"><br>
+                <option th:each="pc : ${productCategories}" th:text="${pc.productCategoryTitle}" th:value="${pc.productCategoryId}"></option>
+            </select><br>
+        </div>
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" th:field="*{productPrice}" placeholder="Cena produktu"><br>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" th:field="*{authorName}" placeholder="Imię autora"><br>
+        </div>
+
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" th:field="*{authorSurname}" placeholder="Nazwisko autora"><br>
+        </div>
+    </div>
+
+    <div class="form-horizontal">
+        <button class="btn btn-primary form-control" type="submit">Dodaj produkt</button><br>
+        <button class="btn btn-warning form-control" type="reset">RESET</button>
+    </div>
+</form>
+
+</body>
+</html>

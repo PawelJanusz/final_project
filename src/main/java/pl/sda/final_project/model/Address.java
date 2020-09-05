@@ -1,4 +1,6 @@
-package pl.sda.final_project;
+package pl.sda.final_project.model;
+
+import pl.sda.final_project.dto.RegistrationDto;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;

@@ -1,5 +1,7 @@
-package pl.sda.final_project;
+package pl.sda.final_project.model;
 
+
+import pl.sda.final_project.dto.RegistrationDto;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -8,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
     private String firstName;
     private String lastName;

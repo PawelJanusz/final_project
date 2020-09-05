@@ -1,4 +1,4 @@
-package pl.sda.final_project;
+package pl.sda.final_project.model;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -24,5 +24,9 @@ public class BaseEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public Long getId() {
+        return id;
     }
 }

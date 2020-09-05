@@ -1,4 +1,4 @@
-package pl.sda.final_project;
+package pl.sda.final_project.model;
 
 import java.util.Arrays;
 

@@ -1,7 +1,12 @@
-package pl.sda.final_project;
+package pl.sda.final_project.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import pl.sda.final_project.model.User;
+import pl.sda.final_project.model.UserRole;
+import pl.sda.final_project.dto.RegistrationDto;
+import pl.sda.final_project.repository.UserRepo;
+import pl.sda.final_project.repository.UserRoleRepo;
 
 @Service
 public class UserService {

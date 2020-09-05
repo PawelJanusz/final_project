@@ -1,4 +1,4 @@
-package pl.sda.final_project;
+package pl.sda.final_project.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
