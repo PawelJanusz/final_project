@@ -12,12 +12,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4" th:each="product : ${products}">
+                <div><a th:href="@{'/product' + ${product.id}}"></a></div>
                 <div class="row" style="border: black solid 1px">
                     <div class="col-md-4" th:text="${product.productTitle}">
 
                     </div>
+<!--dodawanie adresu URL w formularzu-->
                     <img class="col-md-4"
-                         src="https://images.squarespace-cdn.com/content/v1/59d2bea58a02c78793a95114/1589398875141-QL8O2W7QS3B4MZPFWHJV/ke17ZwdGBToddI8pDm48kBVDUY_ojHUJPbTAKvjNhBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmmV5_8-bAHr7cY_ioNsJS_wbCc47fY_dUiPbsewqOAk2CqqlDyATm2OxkJ1_5B47U/image-asset.jpeg?format=750w">
+
+                         th:src="@{${product.productImageUrl}}">
                     <div class="col-md-4" th:text="${product.productPrice}">
                     </div>
                 </div>
@@ -25,8 +28,15 @@
         </div>
     </div>
 </div>
+
+<div>
     <!--paginacja, linki do wpisanych parametrów-->
-    <a href="/product/all?page=0&&size=3">1</a>
-    <a href="/product/all?page=1&&size=3">2</a>
+<!--    <a href="/product/all?page=0&&size=3">1</a>-->
+<!--    <a href="/product/all?page=1&&size=3">2</a>-->
+<!--    number.sequence - iteruje jak w pętli -->
+    <th:block th:each="i: ${#numbers.sequence(0, products.getTotalPages() - 1)}">
+        <a class="btn btn-secondary" th:href="@{/product/all(page=${i})}" th:text="${i+1}"></a>
+    </th:block>
+</div>
 </body>
 </html>

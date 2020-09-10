@@ -34,7 +34,7 @@
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <select class="form-control" type="text" th:field="*{productCategoryId}" placeholder="Kategoria produktu"><br>
+            <select class="form-control" type="text" th:field="*{productCategory.productCategoryId}" placeholder="Kategoria produktu"><br>
                 <option th:each="pc : ${productCategories}" th:text="${pc.productCategoryTitle}" th:value="${pc.productCategoryId}"></option>
             </select><br>
         </div>

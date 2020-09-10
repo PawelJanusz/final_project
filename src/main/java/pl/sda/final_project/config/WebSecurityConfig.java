@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception { //konfiguracja zabezpieczeń
             http.authorizeRequests()
-                    .antMatchers("/register","/register/*")  // /register/* wchodzi w jedno zagnieżdżenie dalej lub /register/** wpuszcza ile się da
+                    .antMatchers("/register","/register/*","/", "/rest/*")  // /register/* wchodzi w jedno zagnieżdżenie dalej lub /register/** wpuszcza ile się da
                     .permitAll()
                     .antMatchers("/login")
                     .permitAll()
@@ -62,11 +62,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .password(passwordEncoder.encode("admin"))
                 .roles("ADMIN");
         auth.jdbcAuthentication()
-                .usersByUsernameQuery("select u.LOGIN, u.PASSWORD, 1 from USER u where u.LOGIN = ?")
+                .usersByUsernameQuery("select u.LOGIN, u.PASSWORD, 1 from USER_ENTITY u where u.LOGIN = ?")
                 .authoritiesByUsernameQuery(
                         "select u.LOGIN, R.ROLE_NAME, 1\n" +
-                        "from USER u \n" +
-                        "join USER_ROLES UR on u.ID = UR.USER_ID\n" +
+                        "from USER_ENTITY u \n" +
+                        "join USER_ENTITY_ROLES UR on u.ID = UR.USER_ENTITY_ID\n" +
                         "join USER_ROLE R on R.ID = UR.ROLES_ID\n" +
                         "where u.LOGIN = ?") //sprawdza jakie role ma osoba
                 .dataSource(dataSource)

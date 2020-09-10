@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User extends BaseEntity {
+public class UserEntity extends BaseEntity {
 
     private String firstName;
     private String lastName;
@@ -28,16 +28,14 @@ public class User extends BaseEntity {
     @ManyToMany
     private List<UserRole> roles;
 
-    public static User apply(RegistrationDto registrationDto, String pswdHash){
-        User user = new User();
+    public static UserEntity apply(RegistrationDto registrationDto, String pswdHash){
+        UserEntity user = new UserEntity();
         user.firstName = registrationDto.getFirstName();
         user.lastName = registrationDto.getLastName();
         user.login = registrationDto.getLogin();
         user.password = pswdHash;
         user.address = Address.apply(registrationDto);
-
         user.birthDate = LocalDate.parse(registrationDto.getBirthDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-
         return user;
     }
 
@@ -52,8 +50,19 @@ public class User extends BaseEntity {
     }
 
     private boolean roleExists(UserRole userRole) {
-        return roles != null && roles.stream().anyMatch(r -> userRole.getRoleName().equals(r.getRoleName()));
+        return roles != null && roles.stream()
+                .anyMatch(r -> userRole.getRoleName().equals(r.getRoleName()));
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 }

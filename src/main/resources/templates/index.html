@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
@@ -7,7 +7,13 @@
 </head>
 <body>
 
+<span th:text="${temperature}"></span>
+
+<a href="/login">Zaloguj</a>
 <a href="/logout">Wyloguj</a>
+<a href="/register">Zarejestruj się</a>
+<a href="/product/all">Lista produktów</a>
+<a href="/product/add">Dodaj produkt</a>
 <h1>Welcome to the shop</h1>
 
 

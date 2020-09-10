@@ -1,17 +1,19 @@
 package pl.sda.final_project.dto;
 
+import pl.sda.final_project.model.ProductCategoryEntity;
 import pl.sda.final_project.model.ProductEntity;
 
 import java.math.BigDecimal;
 
 public class ProductDto {
 
+    private Long id;
     private String productTitle;
     private String productDescription;
     private String productImageUrl;
 
-    private Long productCategoryId;
-    private String productCategoryTitle;
+
+    private ProductCategoryDto productCategory;
     private BigDecimal productPrice;
     private String productType;
     private String authorName;
@@ -20,33 +22,40 @@ public class ProductDto {
 
 
     public static ProductDto apply(ProductEntity productEntity){
+        ProductCategoryDto productCategoryDto = new ProductCategoryDto();
+        productCategoryDto.setProductCategoryId(productEntity.getId());
+        productCategoryDto.setProductCategoryTitle(productEntity.getTitle());
+
         ProductDto productDto = new ProductDto();
+        productDto.setId(productEntity.getId());
         productDto.setProductTitle(productEntity.getTitle());
         productDto.setProductDescription(productEntity.getDescription());
-        productDto.setProductCategoryId(productEntity.getCategory().getId());
         productDto.setProductType(productEntity.getProductType().getPlName());
         productDto.setProductPrice(productEntity.getPrice());
         productDto.setAuthorName(productEntity.getAuthor().getAuthorName());
         productDto.setAuthorSurname(productEntity.getAuthor().getAuthorSurname());
+        productDto.setProductImageUrl(productEntity.getImageUrl());
+        productDto.setProductCategory(productCategoryDto);
 
         return productDto;
     }
 
-    public String getProductCategoryTitle() {
-        return productCategoryTitle;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setProductCategoryTitle(String productCategoryTitle) {
-        this.productCategoryTitle = productCategoryTitle;
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public ProductCategoryDto getProductCategory() {
+        return productCategory;
     }
 
-    public Long getProductCategoryId() {
-        return productCategoryId;
+    public void setProductCategory(ProductCategoryDto productCategory) {
+        this.productCategory = productCategory;
     }
 
-    public void setProductCategoryId(Long productCategoryId) {
-        this.productCategoryId = productCategoryId;
-    }
 
     public String getProductTitle() {
         return productTitle;

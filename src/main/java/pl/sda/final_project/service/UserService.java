@@ -1,8 +1,10 @@
 package pl.sda.final_project.service;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import pl.sda.final_project.model.User;
+import pl.sda.final_project.dto.UserDto;
+import pl.sda.final_project.model.UserEntity;
 import pl.sda.final_project.model.UserRole;
 import pl.sda.final_project.dto.RegistrationDto;
 import pl.sda.final_project.repository.UserRepo;
@@ -27,13 +29,19 @@ public class UserService {
         if (userWithEmailExists(registrationDto.getLogin())) {
             throw new RuntimeException("Użytkownik o emailu " + registrationDto.getLogin() + "istnieje");
         }
-        User userToSave = User.apply(registrationDto, pass);
+        UserEntity userToSave = UserEntity.apply(registrationDto, pass);
         userToSave.addRole(userRoleRepo.findByRoleName(UserRole.Roles.USER.name()));
         userRepo.save(userToSave);
-
     }
 
     private boolean userWithEmailExists(String login) {
         return userRepo.existsByLogin(login);
+    }
+
+    public UserDto getCurrentUser(){
+        String userName = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepo.findByLogin(userName)
+                .map(UserDto::apply)
+                .orElseThrow(() -> new RuntimeException("Can't find user"));
     }
 }

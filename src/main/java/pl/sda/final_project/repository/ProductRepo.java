@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface ProductRepo extends JpaRepository<ProductEntity, Long> {
 
-    Optional<ProductEntity> findByTitle(String title);
+    Optional<ProductEntity> findByTitle(String title); // spring Data wyszukuje po nazwie metody
 }

@@ -38,7 +38,7 @@ public class ProductController {
         ProductDto productDto = new ProductDto();
         modelAndView.addObject("productToSave", productDto);
         modelAndView.addObject("productTypes", ProductType.values());
-        modelAndView.addObject("product Categories", productCategoryService.findProductCategory());
+        modelAndView.addObject("productCategories", productCategoryService.findProductCategory());
 
         return modelAndView;
     }

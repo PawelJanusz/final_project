@@ -21,7 +21,10 @@ public class Address {
         address.country = Countries.fromSymbol(registrationDto.getCountry());
         address.street = registrationDto.getStreet();
         address.zipCode = registrationDto.getZipCode();
-
         return address;
+    }
+
+    public String getCity() {
+        return city;
     }
 }
