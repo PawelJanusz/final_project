@@ -15,12 +15,18 @@
         $(document).ready(function () {
             $("#btn-add-to-basket").click(function () {
                 var id = $("#product-id").val()
-                $.post("/basket/" + id, function (data) {
+                $.post("/basket/" + id, function () {
                     console.log("data send");
                 });
             });
             console.log("ready!");
         });
+            $("#btn-show-basket").click(function () {
+                console.log("show basket")
+                $.get("/basket/" + id, function (data) {
+                    console.log(data);
+                });
+            });
     </script>
 
 </head>
@@ -50,6 +56,7 @@
 </div>
 
 <div class="btn btn-success" id="btn-add-to-basket"></div>
+<div class="btn btn-success" id="btn-show-basket"></div>
 
 <div type="hidden" th:value="${product.id}" id="product-id"></div>
 

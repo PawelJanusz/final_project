@@ -5,15 +5,14 @@ import org.springframework.web.context.annotation.SessionScope;
 import pl.sda.final_project.dto.BasketItemDto;
 import pl.sda.final_project.dto.ProductDto;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @SessionScope  // zapisywanie koszyka w sesji, żeby nie zaśmiecac bazy danych po wylogowaniu użytkownika
 public class BasketService {
 
     private final ProductService productService;
-    private final Set<BasketItemDto> productList = new HashSet<>();
+    private final Map<Long, BasketItemDto> products = new HashMap<>();
 
     public BasketService(ProductService productService) {
         this.productService = productService;
@@ -22,11 +21,26 @@ public class BasketService {
     public void addProductToBasket(Long id){
         ProductDto productById = productService.findProductById(id);
         BasketItemDto basketItemDto = new BasketItemDto(1, productById);
-        productList.add(basketItemDto);
+        if (products.containsKey(id)) {
+            BasketItemDto basketItem = products.get(id);
+            Integer amount = basketItem.getAmount();
+            basketItem.setAmount(amount + 1);
+        }else {
+            products.put(id, basketItemDto);
+        }
 
     }
 
-    public Set<BasketItemDto> getProducts() {
-        return productList;
+    public Collection<BasketItemDto> getProducts() {
+        return products.values();
     }
+
+//    private void findProductInBasket(BasketItemDto basketItemDto) {
+//        Long itemDto = basketItemDto.getProductDto().getId();
+//        if (products.containsKey(itemDto)) {
+//            BasketItemDto basketItem = products.get(itemDto);
+//            Integer amount = basketItem.getAmount();
+//            basketItem.setAmount(amount + 1);
+//        }
+//    }
 }

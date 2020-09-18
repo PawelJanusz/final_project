@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception { //konfiguracja zabezpieczeń
             http.authorizeRequests()
-                    .antMatchers("/register","/register/*","/", "/rest/*")  // /register/* wchodzi w jedno zagnieżdżenie dalej lub /register/** wpuszcza ile się da
+                    .antMatchers("/register","/register/*","/", "/rest/*", "/resetpswd", "/reset/*", "/reset", "/css/**")  // /register/* wchodzi w jedno zagnieżdżenie dalej lub /register/** wpuszcza ile się da
                     .permitAll()
                     .antMatchers("/login")
                     .permitAll()

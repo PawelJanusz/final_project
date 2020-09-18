@@ -1,17 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Login page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../static/style.css" type="text/css"/>
+
 </head>
 <body>
-<form action="/login-process" method="post">
-    <input type="email" name="username">
-    <input type="password" name="password">
-    <button type="submit">LOGIN</button>
 
-</form>
+<div class="container-bg login">
+    <br>
+    <div class="login-form">
+        <form action="/login-process" method="post">
+            <h2 class="text-center">Log in</h2>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" name="username" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password" required="required">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" >Log in</button>
+            </div>
+            <div class="form-group">
+                <a href="/resetpswd" class="btn btn-primary btn-block">Forgot password</a>
+            </div>
+
+        </form>
+        <p class="text-center"><a href="/register">Create an Account</a></p>
+    </div>
+
+
+</div>
 
 </body>
 </html>

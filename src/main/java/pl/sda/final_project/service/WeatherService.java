@@ -9,8 +9,8 @@ import pl.sda.final_project.weather.FullWhetherInfo;
 public class WeatherService {
 
     private final RestTemplate restTemplate;
-    @Value(value = "${weather.api-key}")
-    private String openWeatherKey;
+//    @Value(value = "${weather.api-key}")
+    private final String openWeatherKey = "ea900b66f547fd7b23625544873a4200";
 
 
     public WeatherService(RestTemplate restTemplate) {
