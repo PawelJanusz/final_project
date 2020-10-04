@@ -22,9 +22,10 @@ public class WeatherService {
         String basicWeatherTemplate = "https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&appid=%s";
         String fullURL = String.format(basicWeatherTemplate, city, openWeatherKey);
 
-        FullWhetherInfo whether = restTemplate.getForObject(fullURL, FullWhetherInfo.class);
-        return whether.getMain().getTemp();
+        FullWhetherInfo temp = restTemplate.getForObject(fullURL, FullWhetherInfo.class);
+        return temp.getMain().getTemp();
 
     }
+
 
 }

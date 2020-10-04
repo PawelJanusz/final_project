@@ -23,6 +23,7 @@ public class ChangePasswordController {
     public ModelAndView getChangePasswordForm(@PathVariable String token){
         ChangePasswordDto modelObject = new ChangePasswordDto();
         modelObject.setToken(token);
+
         return new ModelAndView("changePassword", "changePassword", modelObject);
 
     }

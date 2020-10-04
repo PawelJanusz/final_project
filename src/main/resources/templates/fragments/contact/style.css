@@ -1,0 +1,142 @@
+body{
+    background-color: dimgray;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+
+}
+
+#container{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.rectangle{
+    width: 940px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    background-color: gray;
+    /* utworzenie  cienia diva tytułowego i stopki*/
+    -webkit-box-shadow: 11px 13px 26px 4px rgba(0,0,0,0.9);
+    -moz-box-shadow: 11px 13px 26px 4px rgba(0,0,0,0.9);
+    box-shadow: 11px 13px 26px 4px rgba(0,0,0,0.9);
+}
+
+#list > li{
+    font-size: 30px;
+    list-style-type: none; /* stylizacja list */
+    display: inline-block; /* zamiennik z float: left */
+    border-right: 2px dotted black ;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+#list > a > li {
+    font-size: 30px;
+    list-style-type: none;
+    display: inline-block;
+    border-right: 2px dotted black;
+    color: black;
+    padding-right: 20px;
+    padding-left: 20px;
+
+}
+#list > a > li :first-child{
+    border-left: 2px dotted black ;
+}
+.square{
+    width: 50%;
+    float: left;
+}
+.tile1{
+    float: left;
+    margin: 10px;
+    width: 230px;
+    height: 142px;
+    background-color: cadetblue;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px; /* zaokrąglenie rogów diva */
+}
+.tile1:hover{
+    background-color: #4e8da0;
+
+}
+.tile2{
+    margin: 10px;
+    width: 230px;
+    height: 142px;
+    background-color: lightgray;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.tile2:hover{
+    background-color: #c2c2c2;
+}
+.tile4{
+    margin: 10px;
+    width: 480px;
+    height: 142px;
+    background-color: orange;
+    border-radius: 5px;
+}
+#tile5{
+    margin: 10px;
+    width: 480px;
+    height: 304px;
+    background-image: url("image/logo3.jpg");
+    border-radius: 5px;
+    font-size: 30px;
+}
+.fb{
+    margin: 10px;
+    width: 147px;
+    height: 142px;
+    background-color: blue;
+    float: left;
+    border-radius: 5px;
+}
+
+.fb:hover{
+    background-color: #0000ee;
+}
+
+.linkedIn{
+    margin: 10px;
+    width: 146px;
+    height: 142px;
+    background-color: darkblue;
+    float: left;
+    border-radius: 5px;
+}
+.linkedIn:hover{
+    background-color: #00007a;
+
+}
+.gitHub{
+    margin: 10px;
+    width: 147px;
+    height: 142px;
+    background-color: white;
+    float: left;
+    border-radius: 5px;
+}
+a.tilelink {
+    color: black;
+    text-decoration: none;
+    /* poniżej kod na podlinkowanie całego kafelka */
+    display: block;
+    width: 230px;
+    height: 142px;
+}
+a.socialtilelink{
+    color: black;
+    text-decoration: none;
+    display: block;
+
+}
+

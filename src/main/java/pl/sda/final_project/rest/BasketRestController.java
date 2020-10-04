@@ -21,7 +21,7 @@ public class BasketRestController {
         basketService.addProductToBasket(id);
     }
 
-    @GetMapping()
+    @GetMapping("/content")
     public Collection<BasketItemDto> showBasket(){
         return basketService.getProducts();
     }

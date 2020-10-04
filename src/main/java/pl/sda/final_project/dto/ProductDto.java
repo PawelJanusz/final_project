@@ -1,6 +1,5 @@
 package pl.sda.final_project.dto;
 
-import pl.sda.final_project.model.ProductCategoryEntity;
 import pl.sda.final_project.model.ProductEntity;
 
 import java.math.BigDecimal;

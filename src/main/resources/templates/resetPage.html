@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Login page</title>
-    <script th:replace="fragments/commons::assets">
-    </script>
+    <script th:replace="fragments/commons::assets"></script>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" type="text/css"/>
+
 </head>
 <body>
 <div class="container-bg">
-    <div th:replace="fragments/toolbar :: toolbar">
 
-    </div>
-    <br>
     <div class="login-form">
         <form action="/resetpswd" th:object="${resetForm}" method="post">
             <h2 class="text-center">Reset password</h2>

@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
-    <script th:replace="fragments/commons::assets">
-    </script>
+    <script th:replace="fragments/commons::assets"></script>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" type="text/css"/>
+
+
 </head>
 <body>
 <div class="container-bg">
+    <div>
+        <p>Temp °C<span th:text="${temperature}">Actual temperature</span></p>
+    </div>
     <div th:replace="fragments/toolbar :: toolbar">
     </div>
 </div>

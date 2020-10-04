@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Product add form</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script th:replace="fragments/commons::assets">
-    </script>
+    <script th:replace="fragments/commons::assets"></script>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" type="text/css"/>
+
+
 </head>
 <body>
 
@@ -14,7 +15,7 @@
 
 <h2 class="text-center">ADD PRODUCT</h2>
 
-<form action="/product/add" method="post" th:object="${productToSave}" >
+<form class="forms" action="/product/add" method="post" th:object="${productToSave}" >
 
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -58,7 +59,7 @@
         </div>
     </div>
 
-    <div class="form-horizontal">
+    <div class="form-horizontal loginPage">
         <button class="btn btn-primary form-control" type="submit">Dodaj produkt</button><br>
         <button class="btn btn-warning form-control" type="reset">RESET</button>
     </div>

@@ -6,6 +6,8 @@ import org.springframework.web.servlet.ModelAndView;
 import pl.sda.final_project.service.UserService;
 import pl.sda.final_project.service.WeatherService;
 
+import java.util.LinkedList;
+
 @Controller
 public class HomePageController {
 
