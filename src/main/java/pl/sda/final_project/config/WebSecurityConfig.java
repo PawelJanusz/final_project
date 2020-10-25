@@ -27,9 +27,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         this.passwordEncoder = passwordEncoder;
     }
 
-
+    /**
+     * configure users access to HTML pages and css style
+     * @param http
+     * @throws Exception
+     */
     @Override
-    protected void configure(HttpSecurity http) throws Exception { //konfiguracja zabezpieczeń
+    protected void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
                     .antMatchers("/register","/register/*","/", "/rest/*", "/resetpswd", "/reset/*", "/reset")  // /register/* wchodzi w jedno zagnieżdżenie dalej lub /register/** wpuszcza ile się da
                     .permitAll()
@@ -57,6 +61,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .logoutSuccessUrl("/login"); //na ten url zostaniemy przekierowani po wylogowaniu
     }
 
+    /**
+     * define data sources about users
+     * check user with database
+     * @throws Exception
+     */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception { // konfiguracja odpytywania
         // definiujemy źródła danych o użytkownikach
@@ -78,6 +87,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+    /**
+     * not used in this project
+     */
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         final CorsConfiguration configuration = new CorsConfiguration();
@@ -87,8 +99,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // setAllowCredentials(true) is important, otherwise:
         // The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'.
         configuration.setAllowCredentials(true);
-        // setAllowedHeaders is important! Without it, OPTIONS preflight request
-        // will fail with 403 Invalid CORS request
+        /**
+         * setAllowedHeaders is important! Without it, OPTIONS preflight request
+         * will fail with 403 Invalid CORS request
+         */
         configuration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

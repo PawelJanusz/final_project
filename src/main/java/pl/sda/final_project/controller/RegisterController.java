@@ -17,7 +17,10 @@ public class RegisterController {
         this.userService = userService;
     }
 
-
+    /**
+     * @param model
+     * @return registration page from HTML
+     */
     @GetMapping("/register") //wpisujemy adres pod jakim pojawi się strona
     public String registrationForm(Model model){
         RegistrationDto registrationDto = new RegistrationDto();
@@ -26,6 +29,10 @@ public class RegisterController {
         return "registrationPage";
     }
 
+    /**
+     * @param registrationDto
+     * @return redirect on URL login page HTML
+     */
     @PostMapping("/register")
     public String registrationEffect(RegistrationDto registrationDto){
         userService.registerUser(registrationDto);

@@ -11,7 +11,10 @@ public class Address {
 
     private String city;
     private String zipCode;
-    @Enumerated(value = EnumType.STRING) //żeby można zapisywać enumy do bazy
+    /**
+     * <code>@Enumerated<code/> is to save enums to database
+     */
+    @Enumerated(value = EnumType.STRING)
     private Countries country;
     private String street;
 

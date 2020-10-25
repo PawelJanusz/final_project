@@ -32,6 +32,9 @@ public class ProductController {
         return modelAndView;
     }
 
+    /**
+     * @return template form to add product
+     */
     @GetMapping("/add")
     public ModelAndView saveProductForm(){
         ModelAndView modelAndView = new ModelAndView("productAdd");
@@ -43,6 +46,9 @@ public class ProductController {
         return modelAndView;
     }
 
+    /**
+     * @return redirect to page with all added products
+     */
     @PostMapping("/add")
     public String saveProduct(ProductDto productDto){
         productService.saveProduct(productDto);

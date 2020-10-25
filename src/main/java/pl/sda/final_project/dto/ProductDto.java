@@ -19,6 +19,9 @@ public class ProductDto {
     private String authorSurname;
 
 
+    /**
+     * change object ProductDto to ProductEntity
+     */
 
     public static ProductDto apply(ProductEntity productEntity){
         ProductCategoryDto productCategoryDto = new ProductCategoryDto();

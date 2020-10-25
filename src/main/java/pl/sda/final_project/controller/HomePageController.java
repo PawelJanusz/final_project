@@ -6,7 +6,6 @@ import org.springframework.web.servlet.ModelAndView;
 import pl.sda.final_project.service.UserService;
 import pl.sda.final_project.service.WeatherService;
 
-import java.util.LinkedList;
 
 @Controller
 public class HomePageController {
@@ -19,6 +18,9 @@ public class HomePageController {
         this.userService = userService;
     }
 
+    /**
+     * @return HTML main page with actual temperature
+     */
     @GetMapping("/")
     public ModelAndView showMainWithWeather(){
         double cityTemperature = weatherService.getCityTemperature(userService.getCurrentUser().getUserCity());

@@ -18,6 +18,7 @@ public class PasswordController {
         this.userService = userService;
     }
 
+
     @GetMapping
     public ModelAndView resetPassword(){
         return new ModelAndView("resetPage", "resetForm", new ResetPasswordDto());

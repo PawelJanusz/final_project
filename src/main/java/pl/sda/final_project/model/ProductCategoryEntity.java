@@ -9,8 +9,10 @@ public class ProductCategoryEntity extends BaseEntity {
 
     private String title;
 
-    // konstruktor domyślny bezparametrowy
 
+    /**
+     * default constructor without parameters
+     */
     public String getTitle() {
         return title;
     }

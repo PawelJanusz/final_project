@@ -28,6 +28,9 @@ public class ChangePasswordController {
 
     }
 
+    /**
+     * @return redirect HTML login page
+     */
     @PostMapping
     public String changePassword(ChangePasswordDto changePasswordDto){
         userService.changePassword(changePasswordDto);

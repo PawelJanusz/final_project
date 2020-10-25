@@ -2,7 +2,10 @@ package pl.sda.final_project.model;
 
 public enum ProductType {
 
-    FOOD("jadalne"),  // puste nawiasy to wywoływanie konstruktora domyślnego
+    /**
+     * empty brackets are to call default constructor
+     */
+    FOOD("jadalne"),
     NOT_FOOD("niejadalne");
 
     private String plName;
