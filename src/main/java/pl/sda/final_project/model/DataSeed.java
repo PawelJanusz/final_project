@@ -21,13 +21,13 @@ public class DataSeed implements InitializingBean { // poniższa metoda się uru
     public void afterPropertiesSet() {
         createRole(UserRole.Roles.ADMIN);
         createRole(UserRole.Roles.USER);
-        addCategory(new ProductCategoryEntity("karty graficzne"));
-        addCategory(new ProductCategoryEntity("procesory"));
-        addCategory(new ProductCategoryEntity("płyty główne"));
-        addCategory(new ProductCategoryEntity("pamięci RAM"));
-        addCategory(new ProductCategoryEntity("zasilacze"));
-        addCategory(new ProductCategoryEntity("obudowy"));
-        addCategory(new ProductCategoryEntity("chłodzenia procesora"));
+        addCategory(new ProductCategoryEntity("KARTY GRAFICZNE"));
+        addCategory(new ProductCategoryEntity("PROCESORY"));
+        addCategory(new ProductCategoryEntity("PŁYTY GŁÓWNE"));
+        addCategory(new ProductCategoryEntity("PAMIĘĆ RAM"));
+        addCategory(new ProductCategoryEntity("ZASILACZE"));
+        addCategory(new ProductCategoryEntity("OBUDOWY"));
+        addCategory(new ProductCategoryEntity("CHŁODZENIA PROCESORA"));
 
     }
 
