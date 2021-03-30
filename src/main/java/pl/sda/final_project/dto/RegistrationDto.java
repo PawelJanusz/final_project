@@ -11,9 +11,6 @@ public class RegistrationDto {
     private String lastName;
     private String birthDate;
     private String pesel;
-    /**
-     * login is e-mail
-     */
     private String login;
     private String password;
     private String phoneNumber;

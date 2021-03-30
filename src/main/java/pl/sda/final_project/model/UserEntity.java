@@ -20,9 +20,6 @@ public class UserEntity extends BaseEntity {
 
     private LocalDate birthDate;
     private String pesel;
-    /**
-     * login is an e-mail
-     */
     private String login;
     private String password;
     private String phoneNumber;

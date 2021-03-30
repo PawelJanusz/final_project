@@ -18,7 +18,6 @@ public class RegisterController {
     }
 
     /**
-     * @param model
      * @return registration page from HTML
      */
     @GetMapping("/register") //wpisujemy adres pod jakim pojawi się strona

@@ -17,15 +17,16 @@ public class BaseEntity {
     @Version
     private Long version;
 
+    /**
+     * down casting to <code>BaseEntity<code/>
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;
         if (o == null || getClass() != o.getClass())
             return false;
-        /**
-         * down casting to <code>BaseEntity<code/>
-         */
+
         BaseEntity sent = (BaseEntity) o;
         return Objects.equals(id, sent.id);
     }

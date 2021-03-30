@@ -25,7 +25,7 @@ public class HomePageController {
     }
 
     /**
-     * @return HTML main page with actual temperature
+     * @return HTML main page with actual temperature and humidity
      */
     @GetMapping("/")
     public ModelAndView showMainWithWeather(){

@@ -29,8 +29,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * configure users access to HTML pages and css style
-     * @param http
-     * @throws Exception
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {

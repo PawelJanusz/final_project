@@ -15,10 +15,6 @@ public class ProductDetailController {
         this.productService = productService;
     }
 
-    /**
-     * @param id of product from database
-     * @return product details
-     */
 
     @GetMapping("/product/{id}")
     public ModelAndView showProductDetails(@PathVariable Long id){
