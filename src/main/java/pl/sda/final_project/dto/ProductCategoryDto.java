@@ -7,8 +7,6 @@ public class ProductCategoryDto {
     private String productCategoryTitle;
     private Long productCategoryId;
 
-
-
     public static ProductCategoryDto apply(ProductCategoryEntity productCategoryEntity) {
         ProductCategoryDto productCategoryDto = new ProductCategoryDto();
         productCategoryDto.productCategoryTitle = productCategoryEntity.getTitle();

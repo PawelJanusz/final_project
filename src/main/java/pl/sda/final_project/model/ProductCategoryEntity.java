@@ -10,19 +10,16 @@ public class ProductCategoryEntity extends BaseEntity {
     private String title;
 
 
-    /**
-     * default constructor without parameters
-     */
-    public String getTitle() {
-        return title;
-    }
-
     public ProductCategoryEntity(String title) {
         this.title = title;
     }
-
+    /**
+     * default constructor without parameters
+     */
     public ProductCategoryEntity() {
     }
 
-
+    public String getTitle() {
+        return title;
+    }
 }

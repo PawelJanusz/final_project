@@ -8,9 +8,6 @@ public class UserDto {
     private String userCity;
 
 
-    /**
-     * UserDto to UserEntity
-     */
     public static UserDto apply(UserEntity userEntity){
         UserDto userDto = new UserDto();
         userDto.userCity = userEntity.getAddress().getCity();

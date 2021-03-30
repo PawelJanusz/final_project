@@ -17,7 +17,7 @@ public class ProductDetailController {
 
     /**
      * @param id of product from database
-     * @return szczegóły produktu
+     * @return product details
      */
 
     @GetMapping("/product/{id}")

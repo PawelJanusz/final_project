@@ -14,11 +14,12 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+/src/main/resources/application.properties
+/.idea
+/target
 *.iws
 *.iml
 *.ipr
-/src/main/resources/application.properties
 
 ### NetBeans ###
 /nbproject/private/

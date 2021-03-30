@@ -12,7 +12,7 @@ public class Address {
     private String city;
     private String zipCode;
     /**
-     * <code>@Enumerated<code/> is to save enums to database
+     * <code>@Enumerated<code/> is to save values enums to database like String not a ordinary number
      */
     @Enumerated(value = EnumType.STRING)
     private Countries country;

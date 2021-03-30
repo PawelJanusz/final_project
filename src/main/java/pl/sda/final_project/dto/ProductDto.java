@@ -11,17 +11,11 @@ public class ProductDto {
     private String productDescription;
     private String productImageUrl;
 
-
     private ProductCategoryDto productCategory;
     private BigDecimal productPrice;
     private String productType;
     private String authorName;
     private String authorSurname;
-
-
-    /**
-     * change object ProductDto to ProductEntity
-     */
 
     public static ProductDto apply(ProductEntity productEntity){
         ProductCategoryDto productCategoryDto = new ProductCategoryDto();

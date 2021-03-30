@@ -12,7 +12,7 @@ public class RegistrationDto {
     private String birthDate;
     private String pesel;
     /**
-     * @param login is e-mail
+     * login is e-mail
      */
     private String login;
     private String password;

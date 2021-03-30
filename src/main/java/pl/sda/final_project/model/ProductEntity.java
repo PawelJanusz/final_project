@@ -23,9 +23,6 @@ public class ProductEntity extends BaseEntity {
     @Embedded
     private Author author;
 
-    /**
-     * change DTO to entity - it is in database
-     */
     public static ProductEntity apply(ProductDto productDto) {
         ProductEntity productEntityToSave = new ProductEntity();
         productEntityToSave.title = productDto.getProductTitle();

@@ -27,5 +27,15 @@ public class WeatherService {
 
     }
 
+    public double getHumidity(String city) {
+
+        String basicWeatherTemplate = "https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&appid=%s";
+        String fullURL = String.format(basicWeatherTemplate, city, openWeatherKey);
+
+        FullWhetherInfo humidity = restTemplate.getForObject(fullURL, FullWhetherInfo.class);
+        return humidity.getMain().getHumidity();
+
+    }
+
 
 }
