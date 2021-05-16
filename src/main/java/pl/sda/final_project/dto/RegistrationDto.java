@@ -3,7 +3,6 @@ package pl.sda.final_project.dto;
 
 public class RegistrationDto {
 
-
     private String country;
     private String city;
     private String street;
@@ -16,6 +15,7 @@ public class RegistrationDto {
     private String phoneNumber;
     private String zipCode;
     private boolean preferEmails;
+
 
     public String getCountry() {
         return country;

@@ -5,18 +5,30 @@ import pl.sda.final_project.dto.RegistrationDto;
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import java.util.Objects;
 
 @Embeddable
 public class Address {
 
     private String city;
     private String zipCode;
+
     /**
      * <code>@Enumerated<code/> is to save values enums to database like String not a ordinary number
      */
     @Enumerated(value = EnumType.STRING)
     private Countries country;
     private String street;
+
+    public Address(String city, String zipCode, Countries country, String street) {
+        this.city = city;
+        this.zipCode = zipCode;
+        this.country = country;
+        this.street = street;
+    }
+
+    public Address() {
+    }
 
     static Address apply(RegistrationDto registrationDto){
         Address address = new Address();
@@ -29,5 +41,18 @@ public class Address {
 
     public String getCity() {
         return city;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return Objects.equals(city, address.city) && Objects.equals(zipCode, address.zipCode) && country == address.country && Objects.equals(street, address.street);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, zipCode, country, street);
     }
 }
