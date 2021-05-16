@@ -35,8 +35,8 @@ public class ResetPasswordService {
 
     public UserEntity findUserByToken(String token) {
        return resetPasswordRepo.findByToken(token)
-                .map(ResetPasswordEntity::getUser).orElseThrow(
-                        () -> new RuntimeException("Token does not exist"));
+                .map(ResetPasswordEntity::getUser)
+                .orElseThrow(() -> new RuntimeException("Token does not exist"));
         //TODO check if token valid
     }
 }

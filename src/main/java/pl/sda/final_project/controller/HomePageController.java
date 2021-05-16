@@ -1,10 +1,7 @@
 package pl.sda.final_project.controller;
 
-import com.google.gson.Gson;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
 import pl.sda.final_project.service.UserService;
 import pl.sda.final_project.service.WeatherService;

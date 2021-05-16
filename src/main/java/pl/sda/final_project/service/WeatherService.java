@@ -12,13 +12,11 @@ public class WeatherService {
 //    @Value(value = "${weather.api-key}")
     private final String openWeatherKey = "ea900b66f547fd7b23625544873a4200";
 
-
     public WeatherService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
     public double getCityTemperature(String city) {
-
         String basicWeatherTemplate = "https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&appid=%s";
         String fullURL = String.format(basicWeatherTemplate, city, openWeatherKey);
 
@@ -28,7 +26,6 @@ public class WeatherService {
     }
 
     public double getHumidity(String city) {
-
         String basicWeatherTemplate = "https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&appid=%s";
         String fullURL = String.format(basicWeatherTemplate, city, openWeatherKey);
 
@@ -36,6 +33,4 @@ public class WeatherService {
         return humidity.getMain().getHumidity();
 
     }
-
-
 }

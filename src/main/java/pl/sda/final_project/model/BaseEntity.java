@@ -8,7 +8,6 @@ public class BaseEntity {
 
     /**
      * <code>@GenerationValue<code/> define primary key
-     * the worst solution is to use <code>@Table<code/>
      */
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

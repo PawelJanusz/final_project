@@ -8,8 +8,8 @@ import pl.sda.final_project.repository.UserRoleRepo;
 @Component
 public class DataSeed implements InitializingBean { // poniższa metoda się uruchomi po inicjalizacji springa
 
-    private UserRoleRepo userRoleRepo;
-    private ProductCategoryRepo productCategoryRepo;
+    private final UserRoleRepo userRoleRepo;
+    private final ProductCategoryRepo productCategoryRepo;
 
     public DataSeed(UserRoleRepo userRoleRepo, ProductCategoryRepo productCategoryRepo) {
         this.userRoleRepo = userRoleRepo;

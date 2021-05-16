@@ -18,7 +18,6 @@ import java.util.List;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-
     private final DataSource dataSource;
     private final PasswordEncoder passwordEncoder;
 

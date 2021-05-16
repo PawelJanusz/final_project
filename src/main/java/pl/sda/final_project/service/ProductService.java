@@ -15,8 +15,8 @@ import java.util.stream.Collectors;
 @Service
 public class ProductService {
 
-    private ProductRepo productRepo;
-    private ProductCategoryService productCategoryService;
+    private final ProductRepo productRepo;
+    private final ProductCategoryService productCategoryService;
 
     public ProductService(ProductRepo productRepo, ProductCategoryService productCategoryService) {
         this.productRepo = productRepo;
