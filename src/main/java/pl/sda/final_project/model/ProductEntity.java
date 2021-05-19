@@ -23,6 +23,15 @@ public class ProductEntity extends BaseEntity {
     @Embedded
     private Author author;
 
+    public ProductEntity(String title, String description, ProductType productType) {
+        this.title = title;
+        this.description = description;
+        this.productType = productType;
+    }
+
+    public ProductEntity() {
+    }
+
     public static ProductEntity apply(ProductDto productDto) {
         ProductEntity productEntityToSave = new ProductEntity();
         productEntityToSave.title = productDto.getProductTitle();

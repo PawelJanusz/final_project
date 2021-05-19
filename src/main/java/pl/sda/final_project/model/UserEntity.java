@@ -49,9 +49,13 @@ public class UserEntity extends BaseEntity {
         roles.add(userRole);
     }
 
-    private boolean roleExists(UserRole userRole) {
+    public boolean roleExists(UserRole userRole) {
         return roles != null && roles.stream()
                 .anyMatch(r -> userRole.getRoleName().equals(r.getRoleName()));
+    }
+
+    public void clean(){
+        roles.clear();
     }
 
     public String getFirstName() {
