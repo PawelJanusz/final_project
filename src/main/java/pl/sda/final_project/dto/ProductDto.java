@@ -1,5 +1,6 @@
 package pl.sda.final_project.dto;
 
+import pl.sda.final_project.model.Author;
 import pl.sda.final_project.model.ProductEntity;
 
 import java.math.BigDecimal;
@@ -16,6 +17,15 @@ public class ProductDto {
     private String productType;
     private String authorName;
     private String authorSurname;
+
+    public ProductDto(String productTitle, String productDescription, String authorName) {
+        this.productTitle = productTitle;
+        this.productDescription = productDescription;
+        this.authorName = authorName;
+    }
+
+    public ProductDto() {
+    }
 
     public static ProductDto apply(ProductEntity productEntity){
         ProductCategoryDto productCategoryDto = new ProductCategoryDto();
