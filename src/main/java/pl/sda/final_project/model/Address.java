@@ -5,12 +5,17 @@ import pl.sda.final_project.dto.RegistrationDto;
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
 @Embeddable
 public class Address {
 
+    @NotNull
     private String city;
+    @NotNull
+    @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
     private String zipCode;
 
     /**
@@ -18,6 +23,8 @@ public class Address {
      */
     @Enumerated(value = EnumType.STRING)
     private Countries country;
+
+    @NotNull
     private String street;
 
     public Address(String city, String zipCode, Countries country, String street) {

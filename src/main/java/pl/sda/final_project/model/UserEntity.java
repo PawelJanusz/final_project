@@ -4,6 +4,10 @@ package pl.sda.final_project.model;
 import pl.sda.final_project.dto.RegistrationDto;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -12,7 +16,9 @@ import java.util.List;
 @Entity
 public class UserEntity extends BaseEntity {
 
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
 
     @Embedded
@@ -20,8 +26,12 @@ public class UserEntity extends BaseEntity {
 
     private LocalDate birthDate;
     private String pesel;
+    @NotNull
+    @Email
     private String login;
+    @NotNull
     private String password;
+    @Pattern(regexp = "[0-9]{9}", message = "you have to write 9 digits")
     private String phoneNumber;
     private boolean preferEmails;
 

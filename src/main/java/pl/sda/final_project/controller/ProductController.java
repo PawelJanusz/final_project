@@ -11,6 +11,8 @@ import pl.sda.final_project.dto.ProductDto;
 import pl.sda.final_project.service.ProductService;
 import pl.sda.final_project.model.ProductType;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/product")
 public class ProductController {
@@ -50,7 +52,7 @@ public class ProductController {
      * @return redirect to page with all added products
      */
     @PostMapping("/add")
-    public String saveProduct(ProductDto productDto){
+    public String saveProduct(@Valid ProductDto productDto){
         productService.saveProduct(productDto);
         return "redirect:/product/all";
     }

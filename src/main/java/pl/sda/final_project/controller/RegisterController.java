@@ -8,6 +8,8 @@ import pl.sda.final_project.model.Countries;
 import pl.sda.final_project.dto.RegistrationDto;
 import pl.sda.final_project.service.UserService;
 
+import javax.validation.Valid;
+
 @Controller
 public class RegisterController {
 
@@ -33,7 +35,7 @@ public class RegisterController {
      * @return redirect on URL login page HTML
      */
     @PostMapping("/register")
-    public String registrationEffect(RegistrationDto registrationDto){
+    public String registrationEffect(@Valid RegistrationDto registrationDto){
         userService.registerUser(registrationDto);
         return "redirect:/login"; //przekierowanie na URL login
     }
