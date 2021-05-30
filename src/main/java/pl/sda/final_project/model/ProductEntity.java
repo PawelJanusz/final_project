@@ -28,9 +28,11 @@ public class ProductEntity extends BaseEntity {
     @Embedded
     private Author author;
 
-    public ProductEntity(String title, String description, ProductType productType) {
+    public ProductEntity(String title, BigDecimal price, String description, String imageUrl, ProductType productType) {
         this.title = title;
+        this.price = price;
         this.description = description;
+        this.imageUrl = imageUrl;
         this.productType = productType;
     }
 

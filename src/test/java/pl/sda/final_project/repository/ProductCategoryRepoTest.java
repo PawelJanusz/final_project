@@ -25,13 +25,13 @@ class ProductCategoryRepoTest {
     void noDataShouldReturnEmptyList(){
         //given
         //when
-        List<ProductCategoryEntity> products = productCategoryRepo.findAll();
+        List<ProductCategoryEntity> productsCategory = productCategoryRepo.findAll();
         //then
-        assertEquals(0, products.size());
+        assertEquals(0, productsCategory.size());
     }
 
     @Test
-    void saveProductShouldReturnProperOne(){
+    void saveProductCategoryShouldReturnProperOne(){
         //given
         ProductCategoryEntity productCategory = new ProductCategoryEntity("Motherboards");
         //when
