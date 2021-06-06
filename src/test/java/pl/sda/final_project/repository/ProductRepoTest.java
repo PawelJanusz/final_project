@@ -44,4 +44,17 @@ class ProductRepoTest {
         //then
         assertEquals(product1, addedProduct);
     }
+
+    @Test
+    void addedProductShouldBeAbleToDelete(){
+        //given
+        ProductEntity product = new ProductEntity("Graphic card", new BigDecimal(2500),"Cooling by air",
+                "https://www.google.com/search?q=aorus", ProductType.NOT_FOOD);
+        //when
+        entityManager.persist(product);
+        productRepo.deleteAll();
+        List<ProductEntity> addedProduct = productRepo.findAll();
+        //then
+        assertEquals(0, addedProduct.size());
+    }
 }
