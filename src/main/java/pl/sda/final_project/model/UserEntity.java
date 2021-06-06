@@ -26,6 +26,7 @@ public class UserEntity extends BaseEntity {
 
     private LocalDate birthDate;
     private String pesel;
+
     @NotNull
     @Email
     private String login;
@@ -37,6 +38,16 @@ public class UserEntity extends BaseEntity {
 
     @ManyToMany
     private List<UserRole> roles;
+
+    public UserEntity(String firstName, String lastName, String login, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.login = login;
+        this.password = password;
+    }
+
+    public UserEntity() {
+    }
 
     public static UserEntity apply(RegistrationDto registrationDto, String pswdHash){
         UserEntity user = new UserEntity();
