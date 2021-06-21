@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Home page</title>
     <script th:replace="fragments/commons::assets"></script>
+    <script type="text/javascript" src="slider.js"></script>
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" type="text/css"/>
 
 
@@ -14,6 +15,12 @@
         <p><span th:text="${weather}">Actual weather</span></p>
     </div>
     <div th:replace="fragments/toolbar :: toolbar">
+    </div>
+
+    <div id="advertisement">
+        <script type="text/javascript">
+            changeImage();
+        </script>
     </div>
 </div>
 </body>
