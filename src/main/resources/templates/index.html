@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Home page</title>
     <script th:replace="fragments/commons::assets"></script>
-    <script type="text/javascript" src="slider.js"></script>
+    <script type="text/javascript" src="../templates/slider.js" th:href="@{/templates/slider.js}"></script>
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" type="text/css"/>
 
 
@@ -18,7 +18,7 @@
     </div>
 
     <div id="advertisement">
-        <script type="text/javascript">
+        <script>
             changeImage();
         </script>
     </div>
