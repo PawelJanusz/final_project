@@ -4,7 +4,7 @@ function hide(){
     $("#advertisement").fadeOut(500);
 }
 
-function changeImage(){
+function changePicture(){
     number++;
     if (number>5) {
         number = 1;
@@ -13,6 +13,6 @@ function changeImage(){
 
     document.getElementById("advertisement").innerHTML = file;
     $("#advertisement").fadeIn(500);
-    setTimeout("changeImage()", 5000);
+    setTimeout("changePicture()", 5000);
     setTimeout("hide()",4500);
 }
