@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BasketItemDtoTest {
 
     @Test
-    void objectsShouldBeEqual(){
+    void objectsShouldNotBeEqual(){
         //given
         ProductDto productDto1 = new ProductDto("Obudowa", "Corsair", "Ninja");
         ProductDto productDto2 = new ProductDto("Obudowa", "Enermax", "Ninja");

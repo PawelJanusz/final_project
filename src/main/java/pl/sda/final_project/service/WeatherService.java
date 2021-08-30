@@ -21,6 +21,7 @@ public class WeatherService {
         String fullURL = String.format(basicWeatherTemplate, city, openWeatherKey);
 
         FullWhetherInfo temp = restTemplate.getForObject(fullURL, FullWhetherInfo.class);
+        assert temp != null;
         return temp.getMain().getTemp();
 
     }
@@ -30,6 +31,7 @@ public class WeatherService {
         String fullURL = String.format(basicWeatherTemplate, city, openWeatherKey);
 
         FullWhetherInfo humidity = restTemplate.getForObject(fullURL, FullWhetherInfo.class);
+        assert humidity != null;
         return humidity.getMain().getHumidity();
 
     }

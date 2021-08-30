@@ -55,7 +55,10 @@ public class Address {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Address address = (Address) o;
-        return Objects.equals(city, address.city) && Objects.equals(zipCode, address.zipCode) && country == address.country && Objects.equals(street, address.street);
+        return  Objects.equals(city, address.city) &&
+                Objects.equals(zipCode, address.zipCode) &&
+                country == address.country &&
+                Objects.equals(street, address.street);
     }
 
     @Override
