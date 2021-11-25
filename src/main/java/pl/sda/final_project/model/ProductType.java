@@ -8,7 +8,7 @@ public enum ProductType {
     FOOD("jadalne"),
     NOT_FOOD("niejadalne");
 
-    private String plName;
+    private final String plName;
 
     ProductType(String plName) {
         this.plName = plName;

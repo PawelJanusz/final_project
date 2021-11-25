@@ -25,11 +25,13 @@ public class ProductService {
 
     public void saveProduct(ProductDto productDto){
        ProductEntity productEntityToSave = ProductEntity.apply(productDto);
-       ProductCategoryEntity category = productCategoryService.findCategoryById(productDto.getProductCategory().getProductCategoryId())
+       ProductCategoryEntity category = productCategoryService
+                .findCategoryById(productDto.getProductCategory().getProductCategoryId())
                 .orElseThrow(() -> new RuntimeException("Can,t find category"));
        productEntityToSave.setCategory(category);
        productRepo.save(productEntityToSave);
     }
+
     //rozpoznaje podane w parametrach (?page=0&size=10)
     public Page<ProductDto> findProducts(Pageable pageable) {  // pobieranie listy produktów
         Page<ProductEntity> page = productRepo.findAll(pageable);

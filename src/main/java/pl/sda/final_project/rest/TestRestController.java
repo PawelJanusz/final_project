@@ -11,7 +11,7 @@ import pl.sda.final_project.service.UserService;
 @RequestMapping("/rest")
 public class TestRestController {
 
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     public TestRestController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
